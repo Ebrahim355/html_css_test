@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل CSS الشامل - جميع الخصائص مع أمثلة تفصيلية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-code"></i> دليل CSS الشامل</h1>
+            <p>جميع خصائص CSS مع شرح مفصل وأمثلة عملية لكل قيمة ممكنة</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#text"><i class="fas fa-font"></i> نصوص</a></li>
+                <li><a href="#box"><i class="fas fa-square"></i> صندوق</a></li>
+                <li><a href="#layout"><i class="fas fa-layer-group"></i> تخطيط</a></li>
+                <li><a href="#background"><i class="fas fa-image"></i> خلفيات</a></li>
+                <li><a href="#animation"><i class="fas fa-magic"></i> حركات</a></li>
+                <li><a href="#transform"><i class="fas fa-vector-square"></i> تحويلات</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="text">
+            <h2><i class="fas fa-font icon"></i> خصائص النصوص</h2>
+            
+            <article class="property-card">
+                <h3>font-family</h3>
+                <p>تحديد عائلة الخط المستخدم للنص.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <p style="font-family: 'Arial', sans-serif;">هذا النص باستخدام Arial</p>
+                        <p style="font-family: 'Times New Roman', serif;">هذا النص باستخدام Times New Roman</p>
+                        <p style="font-family: 'Courier New', monospace;">هذا النص باستخدام Courier New</p>
+                    </div>
+                    <pre><code>/* خط بدون serif */
+p {
+    font-family: 'Arial', sans-serif;
+}
+
+/* خط مع serif */
+p {
+    font-family: 'Times New Roman', serif;
+}
+
+/* خط monospace */
+p {
+    font-family: 'Courier New', monospace;
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>text-decoration</h3>
+                <p>تحديد زخرفة النص (تحته، فوقه، خط خلاله، إلخ).</p>
+                <div class="code-example">
+                    <div class="example">
+                        <p style="text-decoration: underline;">نص مسطر تحته</p>
+                        <p style="text-decoration: overline;">نص مسطر فوقه</p>
+                        <p style="text-decoration: line-through;">نص مشطوب</p>
+                        <p style="text-decoration: underline overline;">نص مسطر فوقه وتحته</p>
+                    </div>
+                    <pre><code>p {
+    text-decoration: underline; /* تحته */
+}
+
+p {
+    text-decoration: overline; /* فوقه */
+}
+
+p {
+    text-decoration: line-through; /* مشطوب */
+}
+
+p {
+    text-decoration: underline overline; /* تحته وفوقه */
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="box">
+            <h2><i class="fas fa-square icon"></i> خصائص الصندوق</h2>
+            
+            <article class="property-card">
+                <h3>border</h3>
+                <p>تحديد حدود العنصر بجميع خصائصها.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <div style="border: 1px solid #000; padding: 10px; margin: 10px 0;">حدود بسيطة</div>
+                        <div style="border: 3px dashed #e74c3c; padding: 10px; margin: 10px 0;">حدود متقطعة</div>
+                        <div style="border: 5px double #3498db; padding: 10px; margin: 10px 0;">حدود مزدوجة</div>
+                        <div style="border: 4px groove #2ecc71; padding: 10px; margin: 10px 0;">حدود مجوفة</div>
+                    </div>
+                    <pre><code>div {
+    border: 1px solid #000; /* حدود صلبة */
+}
+
+div {
+    border: 3px dashed #e74c3c; /* حدود متقطعة */
+}
+
+div {
+    border: 5px double #3498db; /* حدود مزدوجة */
+}
+
+div {
+    border: 4px groove #2ecc71; /* حدود مجوفة */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>border-radius</h3>
+                <p>تحديد نصف قطر زوايا العنصر.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <div style="border: 2px solid #3498db; border-radius: 5px; padding: 10px; margin: 10px 0;">زوايا مدورة قليلاً</div>
+                        <div style="border: 2px solid #e74c3c; border-radius: 15px; padding: 10px; margin: 10px 0;">زوايا مدورة أكثر</div>
+                        <div style="border: 2px solid #2ecc71; border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">دائرة كاملة</div>
+                    </div>
+                    <pre><code>div {
+    border-radius: 5px; /* زوايا مدورة قليلاً */
+}
+
+div {
+    border-radius: 15px; /* زوايا مدورة أكثر */
+}
+
+div {
+    border-radius: 50%; /* دائرة كاملة */
+    width: 100px;
+    height: 100px;
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="layout">
+            <h2><i class="fas fa-layer-group icon"></i> خصائص التخطيط</h2>
+            
+            <article class="property-card">
+                <h3>display</h3>
+                <p>تحديد كيفية عرض العنصر في الصفحة.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <h4>block</h4>
+                        <div style="display: block; background-color: #3498db; color: white; padding: 10px; margin: 5px 0;">عنصر block</div>
+                        <div style="display: block; background-color: #3498db; color: white; padding: 10px; margin: 5px 0;">عنصر block آخر</div>
+
+                        <h4>inline</h4>
+                        <span style="display: inline; background-color: #e74c3c; color: white; padding: 10px;">عنصر inline</span>
+                        <span style="display: inline; background-color: #e74c3c; color: white; padding: 10px;">عنصر inline آخر</span>
+
+                        <h4>inline-block</h4>
+                        <div style="display: inline-block; background-color: #2ecc71; color: white; padding: 10px; width: 100px;">inline-block</div>
+                        <div style="display: inline-block; background-color: #2ecc71; color: white; padding: 10px; width: 100px;">inline-block آخر</div>
+
+                        <h4>flex</h4>
+                        <div style="display: flex; background-color: #9b59b6; padding: 10px; gap: 10px;">
+                            <div style="background-color: white; padding: 10px; flex: 1;">عنصر مرن</div>
+                            <div style="background-color: white; padding: 10px; flex: 1;">عنصر مرن</div>
+                        </div>
+
+                        <h4>grid</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background-color: #f39c12; padding: 10px;">
+                            <div style="background-color: white; padding: 10px;">عنصر شبكة</div>
+                            <div style="background-color: white; padding: 10px;">عنصر شبكة</div>
+                        </div>
+
+                        <h4>none</h4>
+                        <div style="display: none; background-color: #34495e; color: white; padding: 10px;">هذا العنصر مخفي</div>
+                        <p>العنصر أعلاه مخفي باستخدام display: none</p>
+                    </div>
+                    <pre><code>/* block - يأخذ العرض كاملًا ويبدأ في سطر جديد */
+div {
+    display: block;
+}
+
+/* inline - يتدفق مع النص ولا يبدأ سطرًا جديدًا */
+span {
+    display: inline;
+}
+
+/* inline-block - مثل inline لكن يمكن تحديد أبعاد له */
+div {
+    display: inline-block;
+    width: 100px;
+}
+
+/* flex - تخطيط مرن */
+.container {
+    display: flex;
+}
+
+/* grid - تخطيط شبكي */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* none - إخفاء العنصر */
+div {
+    display: none;
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>position</h3>
+                <p>تحديد طريقة تحديد موقع العنصر.</p>
+                <div class="code-example">
+                    <div class="example" style="position: relative; height: 200px; background-color: #eee; padding: 20px;">
+                        <h4>static (افتراضي)</h4>
+                        <div style="position: static; background-color: #3498db; color: white; padding: 10px;">عنصر static</div>
+
+                        <h4>relative</h4>
+                        <div style="position: relative; background-color: #e74c3c; color: white; padding: 10px; top: 10px; left: 20px;">عنصر relative</div>
+
+                        <h4>absolute</h4>
+                        <div style="position: absolute; background-color: #2ecc71; color: white; padding: 10px; top: 20px; right: 20px;">عنصر absolute</div>
+
+                        <h4>fixed</h4>
+                        <div style="position: fixed; background-color: #9b59b6; color: white; padding: 10px; bottom: 20px; right: 20px;">عنصر fixed (ثابت في النافذة)</div>
+
+                        <h4>sticky</h4>
+                        <div style="position: sticky; background-color: #f39c12; color: white; padding: 10px; top: 0;">عنصر sticky (يلتصق عند التمرير)</div>
+                    </div>
+                    <pre><code>/* static - الموضع الافتراضي */
+div {
+    position: static;
+}
+
+/* relative - يمكن تحريكه بالنسبة لموضعه الأصلي */
+div {
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+
+/* absolute - يتم تحديد موقعه بالنسبة لأقرب عنصر parent غير static */
+div {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* fixed - ثابت بالنسبة لنافذة المتصفح */
+div {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* sticky - يلتصق عند التمرير */
+div {
+    position: sticky;
+    top: 0;
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="background">
+            <h2><i class="fas fa-image icon"></i> خصائص الخلفيات</h2>
+            
+            <article class="property-card">
+                <h3>background</h3>
+                <p>تحديد خصائص خلفية العنصر (لون، صورة، تكرار، إلخ).</p>
+                <div class="code-example">
+                    <div class="example">
+                        <div style="background: #3498db; color: white; padding: 40px; margin: 10px 0;">خلفية بلون واحد</div>
+                        <div style="background: linear-gradient(to right, #3498db, #2ecc71); color: white; padding: 40px; margin: 10px 0;">خلفية متدرجة</div>
+                        <div style="background: url('https://via.placeholder.com/150') no-repeat center center; height: 150px; margin: 10px 0;">خلفية بصورة</div>
+                    </div>
+                    <pre><code>div {
+    background: #3498db; /* خلفية بلون واحد */
+}
+
+div {
+    background: linear-gradient(to right, #3498db, #2ecc71); /* خلفية متدرجة */
+}
+
+div {
+    background: url('image.jpg') no-repeat center center; /* خلفية بصورة */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>background-size</h3>
+                <p>تحديد حجم صورة الخلفية.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <div style="background: url('https://via.placeholder.com/300') no-repeat; background-size: auto; height: 100px; margin: 10px 0; border: 1px solid #ddd;">auto (الحجم الأصلي)</div>
+                        <div style="background: url('https://via.placeholder.com/300') no-repeat; background-size: cover; height: 100px; margin: 10px 0; border: 1px solid #ddd;">cover (تغطية كاملة)</div>
+                        <div style="background: url('https://via.placeholder.com/300') no-repeat; background-size: contain; height: 100px; margin: 10px 0; border: 1px solid #ddd;">contain (احتواء كامل)</div>
+                        <div style="background: url('https://via.placeholder.com/300') no-repeat; background-size: 50%; height: 100px; margin: 10px 0; border: 1px solid #ddd;">50% (نصف الحجم)</div>
+                    </div>
+                    <pre><code>div {
+    background-size: auto; /* الحجم الأصلي */
+}
+
+div {
+    background-size: cover; /* تغطية كاملة للعنصر */
+}
+
+div {
+    background-size: contain; /* احتواء الصورة كاملة */
+}
+
+div {
+    background-size: 50%; /* نصف الحجم */
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="animation">
+            <h2><i class="fas fa-magic icon"></i> خصائص الحركات</h2>
+            
+            <article class="property-card">
+                <h3>transition</h3>
+                <p>تحديد تأثير الانتقال بين تغييرات الخصائص.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <div class="transition-example" style="width: 100px; height: 100px; background-color: #3498db; transition: all 0.3s ease; margin: 20px auto;"></div>
+                        <button onclick="document.querySelector('.transition-example').style.backgroundColor='#e74c3c'; document.querySelector('.transition-example').style.transform='rotate(45deg)';">تفعيل الانتقال</button>
+                        <button onclick="document.querySelector('.transition-example').style.backgroundColor='#3498db'; document.querySelector('.transition-example').style.transform='rotate(0)';">إعادة التعيين</button>
+                    </div>
+                    <pre><code>div {
+    transition: all 0.3s ease;
+    /* يمكن تحديد خصائص معينة فقط */
+    /* transition: background-color 0.3s ease, transform 0.3s ease; */
+}
+
+div:hover {
+    background-color: #e74c3c;
+    transform: rotate(45deg);
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>animation</h3>
+                <p>إنشاء حركات معقدة باستخدام keyframes.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <div class="animation-example" style="width: 100px; height: 100px; background-color: #2ecc71; margin: 20px auto;"></div>
+                        <button onclick="document.querySelector('.animation-example').style.animation='pulse 2s infinite';">تشغيل الحركة</button>
+                        <button onclick="document.querySelector('.animation-example').style.animation='none';">إيقاف الحركة</button>
+                    </div>
+                    <pre><code>@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+div {
+    animation: pulse 2s infinite;
+    /* يمكن التحكم بالحركة بشكل منفصل */
+    /* animation-name: pulse;
+       animation-duration: 2s;
+       animation-iteration-count: infinite;
+       animation-timing-function: ease-in-out; */
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="transform">
+            <h2><i class="fas fa-vector-square icon"></i> خصائص التحويلات</h2>
+            
+            <article class="property-card">
+                <h3>transform</h3>
+                <p>تطبيق تحويلات هندسية على العنصر.</p>
+                <div class="code-example">
+                    <div class="example" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                        <div style="width: 80px; height: 80px; background-color: #3498db; color: white; display: flex; align-items: center; justify-content: center; margin: 10px;">عادي</div>
+                        <div style="width: 80px; height: 80px; background-color: #e74c3c; color: white; display: flex; align-items: center; justify-content: center; margin: 10px; transform: translate(20px, 10px);">translate</div>
+                        <div style="width: 80px; height: 80px; background-color: #2ecc71; color: white; display: flex; align-items: center; justify-content: center; margin: 10px; transform: rotate(45deg);">rotate</div>
+                        <div style="width: 80px; height: 80px; background-color: #9b59b6; color: white; display: flex; align-items: center; justify-content: center; margin: 10px; transform: scale(1.2);">scale</div>
+                        <div style="width: 80px; height: 80px; background-color: #f39c12; color: white; display: flex; align-items: center; justify-content: center; margin: 10px; transform: skew(20deg);">skew</div>
+                        <div style="width: 80px; height: 80px; background-color: #1abc9c; color: white; display: flex; align-items: center; justify-content: center; margin: 10px; transform: rotate(20deg) scale(1.1) translate(10px, 5px);">متعددة</div>
+                    </div>
+                    <pre><code>div {
+    transform: translate(20px, 10px); /* تحريك */
+}
+
+div {
+    transform: rotate(45deg); /* تدوير */
+}
+
+div {
+    transform: scale(1.2); /* تكبير/تصغير */
+}
+
+div {
+    transform: skew(20deg); /* ميل */
+}
+
+div {
+    transform: rotate(20deg) scale(1.1) translate(10px, 5px); /* تحويلات متعددة */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>transform-origin</h3>
+                <p>تحديد نقطة الأصل للتحويلات.</p>
+                <div class="code-example">
+                    <div class="example" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                        <div style="width: 80px; height: 80px; background-color: #3498db; color: white; display: flex; align-items: center; justify-content: center; margin: 10px; transform: rotate(45deg); transform-origin: center;">center</div>
+                        <div style="width: 80px; height: 80px; background-color: #e74c3c; color: white; display: flex; align-items: center; justify-content: center; margin: 10px; transform: rotate(45deg); transform-origin: top left;">top left</div>
+                        <div style="width: 80px; height: 80px; background-color: #2ecc71; color: white; display: flex; align-items: center; justify-content: center; margin: 10px; transform: rotate(45deg); transform-origin: bottom right;">bottom right</div>
+                        <div style="width: 80px; height: 80px; background-color: #9b59b6; color: white; display: flex; align-items: center; justify-content: center; margin: 10px; transform: rotate(45deg); transform-origin: 30px 60px;">30px 60px</div>
+                    </div>
+                    <pre><code>div {
+    transform: rotate(45deg);
+    transform-origin: center; /* الوسط (افتراضي) */
+}
+
+div {
+    transform: rotate(45deg);
+    transform-origin: top left; /* الزاوية العلوية اليسرى */
+}
+
+div {
+    transform: rotate(45deg);
+    transform-origin: bottom right; /* الزاوية السفلية اليمنى */
+}
+
+div {
+    transform: rotate(45deg);
+    transform-origin: 30px 60px; /* نقطة مخصصة */
+}</code></pre>
+                </div>
+            </article>
+        </section>
+        <!-- نضيف هذه الأقسام بعد قسم التحويلات وقبل إغلاق main -->
+        <section id="flexbox">
+            <h2><i class="fas fa-boxes icon"></i> Flexbox</h2>
+            
+            <article class="property-card">
+                <h3>flex-direction</h3>
+                <p>تحديد اتجاه العناصر المرنة.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <h4>row (افتراضي)</h4>
+                        <div style="display: flex; flex-direction: row; background: #eee; padding: 10px; gap: 10px;">
+                            <div style="background: #3498db; padding: 20px; color: white;">1</div>
+                            <div style="background: #3498db; padding: 20px; color: white;">2</div>
+                            <div style="background: #3498db; padding: 20px; color: white;">3</div>
+                        </div>
+
+                        <h4>row-reverse</h4>
+                        <div style="display: flex; flex-direction: row-reverse; background: #eee; padding: 10px; gap: 10px;">
+                            <div style="background: #e74c3c; padding: 20px; color: white;">1</div>
+                            <div style="background: #e74c3c; padding: 20px; color: white;">2</div>
+                            <div style="background: #e74c3c; padding: 20px; color: white;">3</div>
+                        </div>
+
+                        <h4>column</h4>
+                        <div style="display: flex; flex-direction: column; background: #eee; padding: 10px; gap: 10px; width: 100px;">
+                            <div style="background: #2ecc71; padding: 20px; color: white;">1</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">2</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">3</div>
+                        </div>
+
+                        <h4>column-reverse</h4>
+                        <div style="display: flex; flex-direction: column-reverse; background: #eee; padding: 10px; gap: 10px; width: 100px;">
+                            <div style="background: #f39c12; padding: 20px; color: white;">1</div>
+                            <div style="background: #f39c12; padding: 20px; color: white;">2</div>
+                            <div style="background: #f39c12; padding: 20px; color: white;">3</div>
+                        </div>
+                    </div>
+                    <pre><code>.container {
+    display: flex;
+    flex-direction: row; /* افتراضي */
+}
+
+.container {
+    flex-direction: row-reverse; /* عكس الصف */
+}
+
+.container {
+    flex-direction: column; /* عمود */
+}
+
+.container {
+    flex-direction: column-reverse; /* عكس العمود */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>justify-content</h3>
+                <p>تحديد محاذاة العناصر على المحور الرئيسي.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <h4>flex-start (افتراضي)</h4>
+                        <div style="display: flex; justify-content: flex-start; background: #eee; padding: 10px; gap: 10px;">
+                            <div style="background: #3498db; padding: 20px; color: white;">1</div>
+                            <div style="background: #3498db; padding: 20px; color: white;">2</div>
+                        </div>
+
+                        <h4>flex-end</h4>
+                        <div style="display: flex; justify-content: flex-end; background: #eee; padding: 10px; gap: 10px;">
+                            <div style="background: #e74c3c; padding: 20px; color: white;">1</div>
+                            <div style="background: #e74c3c; padding: 20px; color: white;">2</div>
+                        </div>
+
+                        <h4>center</h4>
+                        <div style="display: flex; justify-content: center; background: #eee; padding: 10px; gap: 10px;">
+                            <div style="background: #2ecc71; padding: 20px; color: white;">1</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">2</div>
+                        </div>
+
+                        <h4>space-between</h4>
+                        <div style="display: flex; justify-content: space-between; background: #eee; padding: 10px; gap: 10px;">
+                            <div style="background: #f39c12; padding: 20px; color: white;">1</div>
+                            <div style="background: #f39c12; padding: 20px; color: white;">2</div>
+                            <div style="background: #f39c12; padding: 20px; color: white;">3</div>
+                        </div>
+
+                        <h4>space-around</h4>
+                        <div style="display: flex; justify-content: space-around; background: #eee; padding: 10px; gap: 10px;">
+                            <div style="background: #9b59b6; padding: 20px; color: white;">1</div>
+                            <div style="background: #9b59b6; padding: 20px; color: white;">2</div>
+                            <div style="background: #9b59b6; padding: 20px; color: white;">3</div>
+                        </div>
+
+                        <h4>space-evenly</h4>
+                        <div style="display: flex; justify-content: space-evenly; background: #eee; padding: 10px; gap: 10px;">
+                            <div style="background: #1abc9c; padding: 20px; color: white;">1</div>
+                            <div style="background: #1abc9c; padding: 20px; color: white;">2</div>
+                            <div style="background: #1abc9c; padding: 20px; color: white;">3</div>
+                        </div>
+                    </div>
+                    <pre><code>.container {
+    justify-content: flex-start; /* افتراضي */
+}
+
+.container {
+    justify-content: flex-end; /* نهاية المحور */
+}
+
+.container {
+    justify-content: center; /* مركز المحور */
+}
+
+.container {
+    justify-content: space-between; /* مسافة بين العناصر */
+}
+
+.container {
+    justify-content: space-around; /* مسافة حول العناصر */
+}
+
+.container {
+    justify-content: space-evenly; /* مسافة متساوية حول العناصر */
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="grid">
+            <h2><i class="fas fa-th icon"></i> CSS Grid</h2>
+            
+            <article class="property-card">
+                <h3>grid-template-columns</h3>
+                <p>تحديد عدد وأحجام أعمدة الشبكة.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <h4>أعمدة متساوية</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; background: #eee; padding: 10px;">
+                            <div style="background: #3498db; padding: 20px; color: white;">1</div>
+                            <div style="background: #3498db; padding: 20px; color: white;">2</div>
+                            <div style="background: #3498db; padding: 20px; color: white;">3</div>
+                        </div>
+
+                        <h4>أعمدة بأحجام مختلفة</h4>
+                        <div style="display: grid; grid-template-columns: 100px 1fr 2fr; gap: 10px; background: #eee; padding: 10px;">
+                            <div style="background: #e74c3c; padding: 20px; color: white;">100px</div>
+                            <div style="background: #e74c3c; padding: 20px; color: white;">1fr</div>
+                            <div style="background: #e74c3c; padding: 20px; color: white;">2fr</div>
+                        </div>
+
+                        <h4>تنسيق متكرر</h4>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background: #eee; padding: 10px;">
+                            <div style="background: #2ecc71; padding: 20px; color: white;">1</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">2</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">3</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">4</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">5</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">6</div>
+                        </div>
+                    </div>
+                    <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 أعمدة متساوية */
+}
+
+.container {
+    grid-template-columns: 100px 1fr 2fr; /* أعمدة بأحجام مختلفة */
+}
+
+.container {
+    grid-template-columns: repeat(3, 1fr); /* تكرار النمط */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>grid-template-areas</h3>
+                <p>تحديد تخطيط الشبكة باستخدام المناطق المسماة.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <div style="display: grid; 
+                                grid-template-areas: 'header header header' 
+                                                     'sidebar main main' 
+                                                     'footer footer footer';
+                                grid-gap: 10px;
+                                background: #eee;
+                                padding: 10px;">
+                            <div style="grid-area: header; background: #3498db; padding: 20px; color: white;">Header</div>
+                            <div style="grid-area: sidebar; background: #e74c3c; padding: 20px; color: white;">Sidebar</div>
+                            <div style="grid-area: main; background: #2ecc71; padding: 20px; color: white;">Main Content</div>
+                            <div style="grid-area: footer; background: #f39c12; padding: 20px; color: white;">Footer</div>
+                        </div>
+                    </div>
+                    <pre><code>.container {
+    display: grid;
+    grid-template-areas: 
+        'header header header'
+        'sidebar main main'
+        'footer footer footer';
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="pseudo">
+            <h2><i class="fas fa-question-circle icon"></i> العناصر الزائفة والفئات الزائفة</h2>
+            
+            <article class="property-card">
+                <h3>:hover, :active, :focus</h3>
+                <p>تأثيرات عند التفاعل مع العناصر.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <button class="hover-example">جرب المرور بالمؤشر</button>
+                        <input type="text" class="focus-example" placeholder="اضغط هنا للتركيز">
+                        <button class="active-example">اضغط واستمر</button>
+                    </div>
+                    <pre><code>button:hover {
+    background-color: #3498db; /* عند المرور بالمؤشر */
+}
+
+button:active {
+    transform: scale(0.95); /* عند النقر */
+}
+
+input:focus {
+    border-color: #2ecc71; /* عند التركيز */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>::before و ::after</h3>
+                <p>إضافة محتوى زائف قبل أو بعد العنصر.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <div class="before-after-example">عنصر عادي</div>
+                    </div>
+                    <pre><code>.element::before {
+    content: "قبل";
+    color: #e74c3c;
+    margin-left: 10px;
+}
+
+.element::after {
+    content: "بعد";
+    color: #2ecc71;
+    margin-right: 10px;
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="variables">
+            <h2><i class="fas fa-cog icon"></i> المتغيرات في CSS</h2>
+            
+            <article class="property-card">
+                <h3>Custom Properties (CSS Variables)</h3>
+                <p>استخدام المتغيرات لإعادة استخدام القيم.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <div class="variable-example">هذا النص يستخدم متغيرات CSS</div>
+                        <button class="variable-button">زر باستخدام متغيرات</button>
+                    </div>
+                    <pre><code>:root {
+    --main-color: #3498db;
+    --secondary-color: #2ecc71;
+    --padding: 15px;
+}
+
+.element {
+    color: var(--main-color);
+    padding: var(--padding);
+}
+
+button {
+    background-color: var(--secondary-color);
+}</code></pre>
+                </div>
+            </article>
+        </section>
+        <!-- نضيف هذه الأقسام قبل إغلاق main -->
+
+        <section id="advanced-text">
+            <h2><i class="fas fa-font icon"></i> خصائص النصوص المتقدمة</h2>
+            
+            <article class="property-card">
+                <h3>text-shadow</h3>
+                <p>إضافة ظل للنص مع إمكانية تحديد الانزياح واللون.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <p style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: 24px;">نص بظل بسيط</p>
+                        <p style="text-shadow: 0 0 10px #e74c3c, 0 0 20px #f39c12; font-size: 24px;">نص بتأثير توهج</p>
+                        <p style="text-shadow: 1px 1px 0 #fff, -1px -1px 0 #000; font-size: 24px;">نص بتأثير ثلاثي الأبعاد</p>
+                    </div>
+                    <pre><code>p {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* إزاحة أفقية | إزاحة رأسية | تمويه | لون */
+}
+
+p {
+    text-shadow: 0 0 10px #e74c3c, 0 0 20px #f39c12; /* ظلال متعددة */
+}
+
+p {
+    text-shadow: 1px 1px 0 #fff, -1px -1px 0 #000; /* تأثير ثلاثي الأبعاد */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>white-space</h3>
+                <p>التحكم في كيفية معالجة المساحات البيضاء في النص.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <h4>normal (افتراضي)</h4>
+                        <div style="white-space: normal; width: 200px; border: 1px solid #ddd; padding: 10px;">
+                            هذا   النص    يحتوي   على   مسافات   متعددة
+                            وسيتم   طيه   تلقائياً
+                        </div>
+
+                        <h4>nowrap</h4>
+                        <div style="white-space: nowrap; width: 200px; border: 1px solid #ddd; padding: 10px;">
+                            هذا   النص    يحتوي   على   مسافات   متعددة
+                            ولن   ينكسر   إلى   سطر   جديد
+                        </div>
+
+                        <h4>pre</h4>
+                        <div style="white-space: pre; width: 200px; border: 1px solid #ddd; padding: 10px;">
+                            هذا   النص    يحافظ   على   المسافات
+                            كما   هو   مكتوب   في   الكود
+                        </div>
+
+                        <h4>pre-wrap</h4>
+                        <div style="white-space: pre-wrap; width: 200px; border: 1px solid #ddd; padding: 10px;">
+                            هذا   النص    يحافظ   على   المسافات
+                            لكنه   ينكسر   عند   الحاجة
+                        </div>
+
+                        <h4>pre-line</h4>
+                        <div style="white-space: pre-line; width: 200px; border: 1px solid #ddd; padding: 10px;">
+                            هذا   النص    يدمج   المسافات   المتعددة
+                            لكنه   يحافظ   على   فواصل   الأسطر
+                        </div>
+                    </div>
+                    <pre><code>div {
+    white-space: normal; /* افتراضي - يطوي المسافات الزائدة */
+}
+
+div {
+    white-space: nowrap; /* لا يسمح بفصل النص إلى أسطر جديدة */
+}
+
+div {
+    white-space: pre; /* يحافظ على المسافات كما في الكود */
+}
+
+div {
+    white-space: pre-wrap; /* يحافظ على المسافات مع كسر السطر عند الحاجة */
+}
+
+div {
+    white-space: pre-line; /* يدمج المسافات الزائدة مع الحفاظ على فواصل الأسطر */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>word-break</h3>
+                <p>التحكم في كيفية كسر الكلمات عند الوصول إلى نهاية السطر.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <h4>normal (افتراضي)</h4>
+                        <div style="word-break: normal; width: 150px; border: 1px solid #ddd; padding: 10px;">
+                            هذهكلمةطويلةجداوسيتمكسرهاوفقاللقواعدالافتراضية
+                        </div>
+
+                        <h4>break-all</h4>
+                        <div style="word-break: break-all; width: 150px; border: 1px solid #ddd; padding: 10px;">
+                            هذهكلمةطويلةجداوسيتمكسرهافيأيمكان
+                        </div>
+
+                        <h4>keep-all</h4>
+                        <div style="word-break: keep-all; width: 150px; border: 1px solid #ddd; padding: 10px;">
+                            هذهكلمةطويلةجداولننكسرهاإلافيأماكنالواصلات
+                        </div>
+
+                        <h4>break-word</h4>
+                        <div style="word-break: break-word; width: 150px; border: 1px solid #ddd; padding: 10px;">
+                            هذهكلمةطويلةجداوسيتمكسرهافقطعندالضرورة
+                        </div>
+                    </div>
+                    <pre><code>div {
+    word-break: normal; /* كسر الكلمات حسب القواعد الافتراضية */
+}
+
+div {
+    word-break: break-all; /* كسر الكلمات في أي مكان عند الضرورة */
+}
+
+div {
+    word-break: keep-all; /* عدم كسر الكلمات إلا في أماكن الواصلات */
+}
+
+div {
+    word-break: break-word; /* كسر الكلمات الطويلة فقط عند الضرورة */
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="advanced-transforms">
+            <h2><i class="fas fa-cube icon"></i> التحويلات المتقدمة</h2>
+            
+            <article class="property-card">
+                <h3>perspective</h3>
+                <p>تحديد مسافة المنظور للتحويلات ثلاثية الأبعاد.</p>
+                <div class="code-example">
+                    <div class="example" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div style="perspective: 500px;">
+                            <div style="width: 100px; height: 100px; background: #3498db; transform: rotateY(45deg); margin: 20px;">
+                                perspective: 500px
+                            </div>
+                        </div>
+                        <div style="perspective: 1000px;">
+                            <div style="width: 100px; height: 100px; background: #e74c3c; transform: rotateY(45deg); margin: 20px;">
+                                perspective: 1000px
+                            </div>
+                        </div>
+                        <div style="perspective: 200px;">
+                            <div style="width: 100px; height: 100px; background: #2ecc71; transform: rotateY(45deg); margin: 20px;">
+                                perspective: 200px
+                            </div>
+                        </div>
+                    </div>
+                    <pre><code>.container {
+    perspective: 500px; /* مسافة المنظور */
+}
+
+.element {
+    transform: rotateY(45deg); /* تحويل ثلاثي الأبعاد */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>transform-style</h3>
+                <p>تحديد ما إذا كان العنصر يحافظ على مساحة ثلاثية الأبعاد للأبناء.</p>
+                <div class="code-example">
+                    <div class="example" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div style="perspective: 500px; transform-style: flat; width: 150px; height: 150px; background: #eee; padding: 10px;">
+                            <div style="width: 100px; height: 100px; background: #3498db; transform: rotateY(45deg);">
+                                transform-style: flat
+                            </div>
+                        </div>
+                        <div style="perspective: 500px; transform-style: preserve-3d; width: 150px; height: 150px; background: #eee; padding: 10px;">
+                            <div style="width: 100px; height: 100px; background: #e74c3c; transform: rotateY(45deg);">
+                                transform-style: preserve-3d
+                            </div>
+                        </div>
+                    </div>
+                    <pre><code>.container {
+    perspective: 500px;
+    transform-style: flat; /* لا يحافظ على المساحة ثلاثية الأبعاد للأبناء */
+}
+
+.container {
+    perspective: 500px;
+    transform-style: preserve-3d; /* يحافظ على المساحة ثلاثية الأبعاد للأبناء */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>backface-visibility</h3>
+                <p>تحديد ما إذا كان الجانب الخلفي للعنصر مرئيًا عند تدويره.</p>
+                <div class="code-example">
+                    <div class="example" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div style="width: 100px; height: 100px; position: relative; transform-style: preserve-3d;">
+                            <div style="position: absolute; width: 100%; height: 100%; background: #3498db; backface-visibility: visible; transform: rotateY(180deg); display: flex; align-items: center; justify-content: center;">
+                                مرئي
+                            </div>
+                            <div style="position: absolute; width: 100%; height: 100%; background: #e74c3c; display: flex; align-items: center; justify-content: center;">
+                                أمامي
+                            </div>
+                        </div>
+                        <div style="width: 100px; height: 100px; position: relative; transform-style: preserve-3d;">
+                            <div style="position: absolute; width: 100%; height: 100%; background: #2ecc71; backface-visibility: hidden; transform: rotateY(180deg); display: flex; align-items: center; justify-content: center;">
+                                مخفي
+                            </div>
+                            <div style="position: absolute; width: 100%; height: 100%; background: #f39c12; display: flex; align-items: center; justify-content: center;">
+                                أمامي
+                            </div>
+                        </div>
+                    </div>
+                    <pre><code>.element {
+    backface-visibility: visible; /* الجانب الخلفي مرئي */
+}
+
+.element {
+    backface-visibility: hidden; /* الجانب الخلفي مخفي */
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="advanced-animations">
+            <h2><i class="fas fa-film icon"></i> الحركات المتقدمة</h2>
+            
+            <article class="property-card">
+                <h3>animation-fill-mode</h3>
+                <p>تحديد كيفية تطبيق الأنماط قبل وبعد التشغيل.</p>
+                <div class="code-example">
+                    <div class="example" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div>
+                            <h4>none (افتراضي)</h4>
+                            <div style="width: 100px; height: 100px; background: #3498db; animation: slide 2s 1; animation-fill-mode: none;"></div>
+                        </div>
+                        <div>
+                            <h4>forwards</h4>
+                            <div style="width: 100px; height: 100px; background: #e74c3c; animation: slide 2s 1; animation-fill-mode: forwards;"></div>
+                        </div>
+                        <div>
+                            <h4>backwards</h4>
+                            <div style="width: 100px; height: 100px; background: #2ecc71; animation: slide 2s 1; animation-fill-mode: backwards;"></div>
+                        </div>
+                        <div>
+                            <h4>both</h4>
+                            <div style="width: 100px; height: 100px; background: #f39c12; animation: slide 2s 1; animation-fill-mode: both;"></div>
+                        </div>
+                    </div>
+                    <pre><code>@keyframes slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(100px); }
+}
+
+div {
+    animation: slide 2s 1;
+    animation-fill-mode: none; /* لا يحتفظ بأي نمط */
+}
+
+div {
+    animation-fill-mode: forwards; /* يحتفظ بنمط الإطار الأخير */
+}
+
+div {
+    animation-fill-mode: backwards; /* يطبق نمط الإطار الأول قبل البدء */
+}
+
+div {
+    animation-fill-mode: both; /* يجمع بين forwards و backwards */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>animation-direction</h3>
+                <p>تحديد اتجاه تشغيل الحركة.</p>
+                <div class="code-example">
+                    <div class="example" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div>
+                            <h4>normal (افتراضي)</h4>
+                            <div style="width: 100px; height: 100px; background: #3498db; animation: slide 2s infinite; animation-direction: normal;"></div>
+                        </div>
+                        <div>
+                            <h4>reverse</h4>
+                            <div style="width: 100px; height: 100px; background: #e74c3c; animation: slide 2s infinite; animation-direction: reverse;"></div>
+                        </div>
+                        <div>
+                            <h4>alternate</h4>
+                            <div style="width: 100px; height: 100px; background: #2ecc71; animation: slide 2s infinite; animation-direction: alternate;"></div>
+                        </div>
+                        <div>
+                            <h4>alternate-reverse</h4>
+                            <div style="width: 100px; height: 100px; background: #f39c12; animation: slide 2s infinite; animation-direction: alternate-reverse;"></div>
+                        </div>
+                    </div>
+                    <pre><code>div {
+    animation: slide 2s infinite;
+    animation-direction: normal; /* من البداية إلى النهاية */
+}
+
+div {
+    animation-direction: reverse; /* من النهاية إلى البداية */
+}
+
+div {
+    animation-direction: alternate; /* يتناوب بين normal و reverse */
+}
+
+div {
+    animation-direction: alternate-reverse; /* يتناوب بين reverse و normal */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>steps() في التوقيت</h3>
+                <p>إنشاء حركات متقطعة بدلاً من الحركات السلسة.</p>
+                <div class="code-example">
+                    <div class="example" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div>
+                            <h4>linear (افتراضي)</h4>
+                            <div style="width: 100px; height: 100px; background: #3498db; animation: move 2s infinite linear;"></div>
+                        </div>
+                        <div>
+                            <h4>steps(4, jump-start)</h4>
+                            <div style="width: 100px; height: 100px; background: #e74c3c; animation: move 2s infinite steps(4, jump-start);"></div>
+                        </div>
+                        <div>
+                            <h4>steps(4, jump-end)</h4>
+                            <div style="width: 100px; height: 100px; background: #2ecc71; animation: move 2s infinite steps(4, jump-end);"></div>
+                        </div>
+                        <div>
+                            <h4>steps(4, jump-none)</h4>
+                            <div style="width: 100px; height: 100px; background: #f39c12; animation: move 2s infinite steps(4, jump-none);"></div>
+                        </div>
+                    </div>
+                    <pre><code>@keyframes move {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100px); }
+}
+
+div {
+    animation: move 2s infinite linear; /* حركة سلسة */
+}
+
+div {
+    animation: move 2s infinite steps(4, jump-start); /* 4 خطوات مع بداية كل خطوة */
+}
+
+div {
+    animation: move 2s infinite steps(4, jump-end); /* 4 خطوات مع نهاية كل خطوة */
+}
+
+div {
+    animation: move 2s infinite steps(4, jump-none); /* 4 خطوات بدون قفز */
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="filters-effects">
+            <h2><i class="fas fa-sliders-h icon"></i> التصفية والتأثيرات</h2>
+            
+            <article class="property-card">
+                <h3>filter</h3>
+                <p>تطبيق تأثيرات بصرية مثل التمويه والتشبع.</p>
+                <div class="code-example">
+                    <div class="example" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px;">
+                        <div>
+                            <img src="img/man1.png" alt="صورة مثال" style="width: 100%;">
+                            <p>عادي</p>
+                        </div>
+                        <div>
+                            <img src="img/man1.png" alt="صورة مثال" style="width: 100%; filter: blur(2px);">
+                            <p>blur(2px)</p>
+                        </div>
+                        <div>
+                            <img src="img/man1.png" alt="صورة مثال" style="width: 100%; filter: brightness(1.5);">
+                            <p>brightness(1.5)</p>
+                        </div>
+                        <div>
+                            <img src="img/man1.png" alt="صورة مثال" style="width: 100%; filter: contrast(200%);">
+                            <p>contrast(200%)</p>
+                        </div>
+                        <div>
+                            <img src="img/man1.png" alt="صورة مثال" style="width: 100%; filter: grayscale(100%);">
+                            <p>grayscale(100%)</p>
+                        </div>
+                        <div>
+                            <img src="img/man1.png" alt="صورة مثال" style="width: 100%; filter: hue-rotate(90deg);">
+                            <p>hue-rotate(90deg)</p>
+                        </div>
+                        <div>
+                            <img src="img/man1.png" alt="صورة مثال" style="width: 100%; filter: invert(100%);">
+                            <p>invert(100%)</p>
+                        </div>
+                        <div>
+                            <img src="img/man1.png" alt="صورة مثال" style="width: 100%; filter: opacity(50%);">
+                            <p>opacity(50%)</p>
+                        </div>
+                        <div>
+                            <img src="img/man1.png" alt="صورة مثال" style="width: 100%; filter: saturate(200%);">
+                            <p>saturate(200%)</p>
+                        </div>
+                        <div>
+                            <img src="img/man1.png" alt="صورة مثال" style="width: 100%; filter: sepia(100%);">
+                            <p>sepia(100%)</p>
+                        </div>
+                        <div>
+                            <img src="img/man1.png" alt="صورة مثال" style="width: 100%; filter: drop-shadow(5px 5px 5px #333);">
+                            <p>drop-shadow</p>
+                        </div>
+                    </div>
+                    <pre><code>img {
+    filter: blur(2px); /* تمويه */
+    filter: brightness(1.5); /* سطوع */
+    filter: contrast(200%); /* تباين */
+    filter: grayscale(100%); /* تدرج رمادي */
+    filter: hue-rotate(90deg); /* تدوير اللون */
+    filter: invert(100%); /* عكس الألوان */
+    filter: opacity(50%); /* شفافية */
+    filter: saturate(200%); /* تشبع */
+    filter: sepia(100%); /* تأثير سيبيا */
+    filter: drop-shadow(5px 5px 5px #333); /* ظل */
+    
+    /* يمكن دمج عدة عوامل تصفية */
+    filter: contrast(150%) brightness(1.2) saturate(120%);
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>backdrop-filter</h3>
+                <p>تطبيق تأثيرات تصفية على المنطقة خلف العنصر.</p>
+                <div class="code-example">
+                    <div class="example" style="position: relative; height: 200px; background: url('https://via.placeholder.com/800x400') center/cover;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255,255,255,0.3); padding: 30px; backdrop-filter: blur(5px) brightness(0.8); border-radius: 10px; text-align: center;">
+                            <p style="color: white; font-weight: bold; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">هذا النص لديه تأثير backdrop-filter</p>
+                        </div>
+                    </div>
+                    <pre><code>.element {
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(5px) brightness(0.8);
+    /* يدعم نفس عوامل التصفية مثل filter */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>mix-blend-mode</h3>
+                <p>تحديد كيفية مزج العنصر مع العناصر الموجودة تحته.</p>
+                <div class="code-example">
+                    <div class="example" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                        <div style="background: linear-gradient(45deg, #3498db, #e74c3c); position: relative; height: 100px;">
+                            <div style="position: absolute; top: 20px; left: 20px; width: 60px; height: 60px; background: #2ecc71; mix-blend-mode: multiply;"></div>
+                            <p style="position: absolute; bottom: 5px; left: 5px; color: white; margin: 0;">multiply</p>
+                        </div>
+                        <div style="background: linear-gradient(45deg, #3498db, #e74c3c); position: relative; height: 100px;">
+                            <div style="position: absolute; top: 20px; left: 20px; width: 60px; height: 60px; background: #2ecc71; mix-blend-mode: screen;"></div>
+                            <p style="position: absolute; bottom: 5px; left: 5px; color: white; margin: 0;">screen</p>
+                        </div>
+                        <div style="background: linear-gradient(45deg, #3498db, #e74c3c); position: relative; height: 100px;">
+                            <div style="position: absolute; top: 20px; left: 20px; width: 60px; height: 60px; background: #2ecc71; mix-blend-mode: overlay;"></div>
+                            <p style="position: absolute; bottom: 5px; left: 5px; color: white; margin: 0;">overlay</p>
+                        </div>
+                        <div style="background: linear-gradient(45deg, #3498db, #e74c3c); position: relative; height: 100px;">
+                            <div style="position: absolute; top: 20px; left: 20px; width: 60px; height: 60px; background: #2ecc71; mix-blend-mode: darken;"></div>
+                            <p style="position: absolute; bottom: 5px; left: 5px; color: white; margin: 0;">darken</p>
+                        </div>
+                        <div style="background: linear-gradient(45deg, #3498db, #e74c3c); position: relative; height: 100px;">
+                            <div style="position: absolute; top: 20px; left: 20px; width: 60px; height: 60px; background: #2ecc71; mix-blend-mode: lighten;"></div>
+                            <p style="position: absolute; bottom: 5px; left: 5px; color: white; margin: 0;">lighten</p>
+                        </div>
+                        <div style="background: linear-gradient(45deg, #3498db, #e74c3c); position: relative; height: 100px;">
+                            <div style="position: absolute; top: 20px; left: 20px; width: 60px; height: 60px; background: #2ecc71; mix-blend-mode: color-dodge;"></div>
+                            <p style="position: absolute; bottom: 5px; left: 5px; color: white; margin: 0;">color-dodge</p>
+                        </div>
+                    </div>
+                    <pre><code>.element {
+    mix-blend-mode: multiply; /* ضرب الألوان */
+    mix-blend-mode: screen; /* عكس الضرب */
+    mix-blend-mode: overlay; /* مزيج من multiply و screen */
+    mix-blend-mode: darken; /* أخذ اللون الأغمق */
+    mix-blend-mode: lighten; /* أخذ اللون الأفتح */
+    mix-blend-mode: color-dodge; /* تفتيح اللون الأساسي */
+    /* وغيرها من الأنماط مثل color-burn, hard-light, soft-light, difference, exclusion, hue, saturation, color, luminosity */
+}</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="modern-layouts">
+            <h2><i class="fas fa-th-large icon"></i> التخطيطات الحديثة</h2>
+            
+            <article class="property-card">
+                <h3>multi-column layout</h3>
+                <p>تقسيم المحتوى إلى عدة أعمدة مثل الجرائد.</p>
+                <div class="code-example">
+                    <div class="example" style="column-count: 3; column-gap: 20px; column-rule: 1px solid #ddd; padding: 10px; background: #f9f9f9;">
+                        <p>هذا نص طويل سيتم تقسيمه إلى ثلاثة أعمدة. خاصية multi-column layout تتيح لك تقسيم المحتوى إلى عدة أعمدة مثل الجرائد والمجلات. يمكن التحكم بعدد الأعمدة والعرض والفراغ بينها وإضافة خط فاصل بين الأعمدة.</p>
+                        <p>هذه الخاصية مفيدة لعرض النصوص الطويلة بطريقة أكثر قابلية للقراءة وتوفير المساحة. يمكن أيضًا التحكم في كيفية تدفق المحتوى بين الأعمدة وإضافة عناوين تمتد عبر جميع الأعمدة.</p>
+                    </div>
+                    <pre><code>.container {
+    column-count: 3; /* عدد الأعمدة */
+    column-gap: 20px; /* المسافة بين الأعمدة */
+    column-rule: 1px solid #ddd; /* خط فاصل بين الأعمدة */
+    column-width: 200px; /* يمكن استخدامها بدلاً من column-count */
+}
+
+/* عنصر يمتد عبر جميع الأعمدة */
+.full-width {
+    column-span: all;
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>aspect-ratio</h3>
+                <p>تحديد نسبة العرض إلى الارتفاع للعنصر.</p>
+                <div class="code-example">
+                    <div class="example" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div style="aspect-ratio: 1/1; background: #3498db; width: 100px; display: flex; align-items: center; justify-content: center; color: white;">1:1</div>
+                        <div style="aspect-ratio: 16/9; background: #e74c3c; width: 160px; display: flex; align-items: center; justify-content: center; color: white;">16:9</div>
+                        <div style="aspect-ratio: 4/3; background: #2ecc71; width: 120px; display: flex; align-items: center; justify-content: center; color: white;">4:3</div>
+                        <div style="aspect-ratio: 3/2; background: #f39c12; width: 120px; display: flex; align-items: center; justify-content: center; color: white;">3:2</div>
+                    </div>
+                    <pre><code>div {
+    aspect-ratio: 1/1; /* مربع */
+    aspect-ratio: 16/9; /* نسبة الشاشة العريضة */
+    aspect-ratio: 4/3; /* نسبة الشاشة التقليدية */
+    aspect-ratio: auto; /* افتراضي - يحسب تلقائياً */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="property-card">
+                <h3>gap للعناصر العادية</h3>
+                <p>تحديد المسافة بين العناصر في التخطيطات غير المرنة.</p>
+                <div class="code-example">
+                    <div class="example">
+                        <h4>بدون gap</h4>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 20px;">
+                            <div style="background: #3498db; padding: 20px; color: white;">1</div>
+                            <div style="background: #3498db; padding: 20px; color: white;">2</div>
+                            <div style="background: #3498db; padding: 20px; color: white;">3</div>
+                        </div>
+
+                        <h4>مع gap</h4>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                            <div style="background: #e74c3c; padding: 20px; color: white;">1</div>
+                            <div style="background: #e74c3c; padding: 20px; color: white;">2</div>
+                            <div style="background: #e74c3c; padding: 20px; color: white;">3</div>
+                        </div>
+
+                        <h4>مع row-gap و column-gap</h4>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 10px; column-gap: 30px; margin-top: 20px;">
+                            <div style="background: #2ecc71; padding: 20px; color: white;">1</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">2</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">3</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">4</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">5</div>
+                            <div style="background: #2ecc71; padding: 20px; color: white;">6</div>
+                        </div>
+                    </div>
+                    <pre><code>.container {
+    display: grid;
+    gap: 20px; /* مسافة متساوية بين الصفوف والأعمدة */
+}
+
+.container {
+    row-gap: 10px; /* مسافة بين الصفوف فقط */
+    column-gap: 30px; /* مسافة بين الأعمدة فقط */
+}
+
+/* يعمل أيضًا مع flexbox */
+.flex-container {
+    display: flex;
+    gap: 15px;
+}</code></pre>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; 2023 دليل CSS الشامل</p>
+            <p>تم إنشاء هذا الموقع لأغراض تعليمية</p>
+        </div>
+    </footer>
+
+    <script>
+        // إضافة أي سكريبتات لاحقًا إذا لزم الأمر
+    </script>
+</body>
+</html>
